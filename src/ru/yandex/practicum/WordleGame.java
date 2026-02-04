@@ -128,6 +128,7 @@ public class WordleGame {
     }
 
     public String compHelp() {
+
         while(true) {
             String helpWord =  dictionary.getRandomWord();
 
