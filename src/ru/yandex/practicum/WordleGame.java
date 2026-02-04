@@ -129,7 +129,7 @@ public class WordleGame {
 
     public String compHelp() {
 
-        while(true) {
+        while (true) {
             String helpWord =  dictionary.getRandomWord();
 
             if (!inputWords.containsKey(helpWord)) {
