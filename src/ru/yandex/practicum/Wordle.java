@@ -35,26 +35,23 @@ public class Wordle {
             System.out.println("Знаком <+> будут отмечаться буквы, которые угаданы верно");
             System.out.println("Начинаем игру");
 
-            while (wordleGame.getSteps() <= 6) {
+            while (wordleGame.getSteps() > 0) {
                 try {
-                    System.out.println("Введите слово из 5 букв");
+                    System.out.printf("Введите слово из %d букв", wordleGame.getWordLength());
+                    System.out.println();
                     System.out.println("Или нажмите Enter для получения подсказки");
+
                     String userInput = scanner.nextLine().trim().toLowerCase();
                     log.println("Пользователь ввел слово: " + userInput);
-
-                    if (userInput.equals(wordleGame.getAnswer())) {
-                        System.out.println("Поздравляем с угадыванием с 1 раза");
-                        log.println("Пользователь угадал с 1 раза");
-                        return;
-                    }
-
                     String codeWord = wordleGame.wordCheck(userInput);
+
                     System.out.println(codeWord);
+                    System.out.println();
                     log.println("Результат сравнения со словом" + codeWord);
 
                     if (codeWord.equals("+++++")) {
                         System.out.printf("Поздравляем!!! Вы угадали слово %s за %d ходов",
-                                wordleGame.getAnswer(), wordleGame.getSteps());
+                                wordleGame.getAnswer(), 7 - wordleGame.getSteps());
                         log.println("Пользователь угадал слово");
                         return;
                     }

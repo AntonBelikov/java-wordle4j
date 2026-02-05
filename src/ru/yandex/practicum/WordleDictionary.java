@@ -11,7 +11,7 @@ import java.util.Random;
     также этот класс может содержать рутинные функции по сравнению слов, букв и т.д.
  */
 public class WordleDictionary {
-    PrintWriter log;
+    private PrintWriter log;
     private final List<String> words;
     private Random random;
 
@@ -40,21 +40,11 @@ public class WordleDictionary {
     }
 
     public boolean containWord(String word) {
-
-        if (words.contains(word)) {
-            return  true;
-        }
-
-        return false;
+        return words.contains(word);
     }
 
     public boolean isWordInDictionary(String userWord) {
-
-        if (words.contains(userWord)) {
-            return true;
-        }
-
-        return false;
+        return words.contains(userWord);
     }
 
     public String getRandomWord() {

@@ -43,11 +43,6 @@ public class WordleDictionaryLoader {
     }
 
     public boolean containWord(String word) {
-
-        if (dictionaryWords.contains(word)) {
-            return true;
-        }
-
-        return false;
+        return dictionaryWords.contains(word);
     }
 }

@@ -23,16 +23,18 @@ public class WordleGame {
     private int steps;
     private WordleDictionary dictionary;
     private Map<String, Integer> inputWords;
-    PrintWriter log;
+    private PrintWriter log;
     private WordleDictionaryLoader dictionaryLoader;
+    private int wordLength;
 
     public WordleGame(WordleDictionary dictionary,PrintWriter log, WordleDictionaryLoader dictionaryLoader) {
         answer = dictionary.getRandomWord();
-        steps = 1;
+        steps = 6;
         this.dictionary = dictionary;
         inputWords = new LinkedHashMap<>();
         this.log = log;
         this.dictionaryLoader = dictionaryLoader;
+        wordLength = 5;
     }
 
     public String wordCheck(String userWord) throws WordLengthExseption,
@@ -61,7 +63,8 @@ public class WordleGame {
         }
 
         if (userWord.length() != 5) {
-            System.out.println("Должно состоять из 5 букв");
+            System.out.printf("Должно состоять из %d букв", wordLength);
+            System.out.println();
             log.println("Слово состоит из другого количества букв");
             throw new WordLengthExseption("Длина не 5");
         }
@@ -139,6 +142,10 @@ public class WordleGame {
         }
     }
 
+    public int getWordLength() {
+        return wordLength;
+    }
+
     public int getSteps() {
         return steps;
     }
@@ -148,6 +155,6 @@ public class WordleGame {
     }
 
     public void nextStep() {
-        steps++;
+        steps--;
     }
 }
