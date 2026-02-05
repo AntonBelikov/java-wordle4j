@@ -39,6 +39,8 @@ public class WordleGameTest {
         Assertions.assertEquals(wordleGame.getSteps(), 6);
         wordleGame.nextStep();
         Assertions.assertEquals(wordleGame.getSteps(), 5);
+        wordleGame.nextStep();
+        Assertions.assertEquals(wordleGame.getSteps(), 4);
     }
 
     @Test
