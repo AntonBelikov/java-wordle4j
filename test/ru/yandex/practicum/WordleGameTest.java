@@ -35,10 +35,10 @@ public class WordleGameTest {
     }
 
     @Test
-    public void testStepsNot0AndBecomeMore() {
-        Assertions.assertNotEquals(wordleGame.getSteps(), 0);
+    public void testSteps6AndBecomeMore() {
+        Assertions.assertEquals(wordleGame.getSteps(), 6);
         wordleGame.nextStep();
-        Assertions.assertEquals(wordleGame.getSteps(), 2);
+        Assertions.assertEquals(wordleGame.getSteps(), 5);
     }
 
     @Test
